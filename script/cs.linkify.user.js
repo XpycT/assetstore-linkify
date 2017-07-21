@@ -39,7 +39,7 @@
         var urlRegex = /\b(https?:\/\/[^\s+\"\<\>]+)/ig;
         var snapTextElements = document.evaluate("//text()[not(ancestor::a) " +
             "and not(ancestor::script) and not(ancestor::style) and " +
-            "contains(translate(., 'HTTP', 'http'), 'http') and contains(., 'assetstore')]",
+            "contains(translate(., 'HTTP', 'http'), 'http') and contains(., 'assetstore.unity3d')]",
             document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
         for (var i = snapTextElements.snapshotLength - 1; i >= 0; i--) {
             var elmText = snapTextElements.snapshotItem(i);
