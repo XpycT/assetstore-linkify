@@ -177,24 +177,26 @@
 
         preload([info.content.content.keyimage.big]);
 
-        let html = `
-        <div class="assetstore-dialog popup-holder" style="display:none;">
-            <div class="popup-holder-close"><svg width="30" height="30"><g stroke="rgb(160,160,160)" stroke-width="4"><line x1="5" y1="5" x2="25" y2="25"/><line x1="5" y1="25" x2="25" y2="5"/></g></svg></div>
-        <div class="popup-holder-content" style="background-image: url(${info.content.content.keyimage.big});">`;
-
+        // check for media gallery
+        let screenshots = '';
         if (info.content.content.images.length > 0) {
-            html += '<div class="screen-holder">';
+            screenshots = '<div class="screen-holder">';
             for (let i = 0; i <= 2; i++) {
                 if (info.content.content.images[i] !== undefined) {
                     let img = info.content.content.images[i];
                     preload([img.thumb]);
-                    html += `<a data-fancybox="gallery_${id}" href="${img.link}"><img src="${img.thumb}"></a>`;
+                    screenshots += `<a data-fancybox="gallery_${id}" href="${img.link}"><img src="${img.thumb}"></a>`;
                 }
             }
-            html += '</div>';
+            screenshots += '</div>';
         }
 
-        html += `</div>
+        let html = `
+        <div class="assetstore-dialog popup-holder" style="display:none;">
+            <div class="popup-holder-close"><svg width="30" height="30"><g stroke="rgb(160,160,160)" stroke-width="4"><line x1="5" y1="5" x2="25" y2="25"/><line x1="5" y1="25" x2="25" y2="5"/></g></svg></div>
+        <div class="popup-holder-content" style="background-image: url(${info.content.content.keyimage.big});">
+            ${screenshots}
+        </div>
         <div class="popup-holder-main-info">
         <div class="overview-text-overlay">
         <h1>${info.header.result.title}</h1>
