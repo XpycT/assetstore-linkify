@@ -5,7 +5,7 @@
 // @description  AssetStore Linkify is a user script for finding links in plain-text and converting them to HTML <a> tags.
 // @homepageURL  https://github.com/XpycT/assetstore-linkify
 // @supportURL   https://github.com/XpycT/assetstore-linkify/issues
-// @updateURL    https://github.com/XpycT/assetstore-linkify/raw/master/script/cs.linkify.user.js
+// @updateURL    https://openuserjs.org/meta/XpycT/AssetStore_Linkify.meta.js
 // @downloadURL  https://github.com/XpycT/assetstore-linkify/raw/master/script/cs.linkify.user.js
 // @author       XpycT
 // @require      https://code.jquery.com/jquery-latest.js
