@@ -12,7 +12,6 @@
 // @require      https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js
 // @match        *://forum.cgpersia.com/*
 // @match        *://www.cgpeers.to/*
-// @match        *://localhost/*
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @grant        GM_addStyle
