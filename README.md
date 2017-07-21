@@ -7,3 +7,7 @@ The script works in:
 * **FireFox** - install [Greasemonkey](https://addons.mozilla.org/ru/firefox/addon/greasemonkey/) or [Tampermonkey](https://addons.mozilla.org/ru/firefox/addon/tampermonkey/)
 * **Chrome** - install [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
 * **Opera** - install [Violentmonkey](https://addons.opera.com/en/extensions/details/violent-monkey/) or [Tampermonkey](https://addons.opera.com/ru/extensions/details/tampermonkey-beta/?display=en)
+
+![Unity AssetStore Linkify](assets/userscript_1.jpg?raw=true "Before/After")
+
+![Unity AssetStore Linkify](assets/userscript_2.jpg?raw=true "Popup dialog")
