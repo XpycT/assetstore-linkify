@@ -29,7 +29,7 @@ AssetStore Linkify is a user script for finding links in plain-text and converti
     | AssetStore Linkify                     | [install][asl-raw] | [GF][asl-gf] [OU][asl-ou] |
 
 [asl-raw]: https://github.com/XpycT/assetstore-linkify/raw/master/script/cs.linkify.user.js
-[asl-gf]: https://openuserjs.org/scripts/XpycT/AssetStore_Linkify
+[asl-gf]: https://greasyfork.org/ru/scripts/31651-assetstore-linkif
 [asl-ou]: https://openuserjs.org/scripts/XpycT/AssetStore_Linkify
 
 # Updating
