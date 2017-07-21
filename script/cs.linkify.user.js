@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AssetStore Linkify
 // @namespace    https://github.com/XpycT/
-// @version      0.1.18
+// @version      0.1.19
 // @description  AssetStore Linkify is a user script for finding links in plain-text and converting them to HTML <a> tags.
 // @homepageURL  https://github.com/XpycT/assetstore-linkify
 // @supportURL   https://github.com/XpycT/assetstore-linkify/issues
@@ -172,7 +172,7 @@
     }
 
     function createPopup(info) {
-        console.log(info);
+        //console.log(info);
         let id = info.content.content.id;
 
         preload([info.content.content.keyimage.big]);
