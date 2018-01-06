@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AssetStore Linkify
 // @namespace    https://github.com/XpycT/
-// @version      0.2.1
+// @version      0.2.2
 // @license      MIT
 // @description  AssetStore Linkify is a user script for finding links in plain-text and converting them to HTML <a> tags.
 // @homepageURL  https://github.com/XpycT/assetstore-linkify
@@ -42,7 +42,7 @@
         let urlRegex = /\b(https?:\/\/[^\s+\"\<\>]+)/ig;
         let snapTextElements = document.evaluate("//text()[not(ancestor::a) " +
             "and not(ancestor::script) and not(ancestor::style) and " +
-            "contains(translate(., 'HTTP', 'http'), 'http') and contains(., 'assetstore.unity3d')]",
+            "contains(translate(., 'HTTP', 'http'), 'http') and contains(., 'assetstore.unity')]",
             document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
         for (let i = snapTextElements.snapshotLength - 1; i >= 0; i--) {
             let elmText = snapTextElements.snapshotItem(i);
@@ -51,7 +51,8 @@
                 let elmSpan = document.createElement("div");
                 elmSpan.className = "unitystore-holder";
                 let sURLText = elmText.nodeValue;
-                elmSpan.dataset.id = sURLText.split('/').pop().trim();
+                let latest = sURLText.split('/').pop().trim();
+                elmSpan.dataset.id = Number.isInteger(latest) ? latest : latest.split('-').pop().trim();
 
                 elmText.parentNode.replaceChild(elmSpan, elmText);
                 urlRegex.lastIndex = 0;
