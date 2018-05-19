@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AssetStore Linkify
 // @namespace    https://github.com/XpycT/
-// @version      0.3.0
+// @version      0.3.2
 // @license      MIT
 // @description  AssetStore Linkify is a user script for finding links in plain-text and converting them to HTML <a> tags.
 // @homepageURL  https://github.com/XpycT/assetstore-linkify
@@ -15,6 +15,7 @@
 // @match        *://forum.cgpersia.com/*
 // @match        *://www.cgpeers.to/*
 // @match        *://gfxpeers.net/*
+// @match        *://leakforums.co/*
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @grant        GM_addStyle
@@ -80,7 +81,7 @@
      * prepare existing links for infobox
      */
     function appendToLinks() {
-        let snapTextElements = document.evaluate("//a[contains(translate(., 'HTTP', 'http'), 'http') and contains(., 'assetstore.unity')]",
+        let snapTextElements = document.evaluate("//a[contains(translate(@href, 'HTTP', 'http'), 'http') and contains(@href, 'assetstore.unity')]",
             document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
         for (let i = snapTextElements.snapshotLength - 1; i >= 0; i--) {
             let elmLink = snapTextElements.snapshotItem(i);

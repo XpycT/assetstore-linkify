@@ -42,6 +42,16 @@ Please report any userscript issues within this repository's [issue section](htt
 
 ## Screenshots
 
+### CGP
+
 ![Unity AssetStore Linkify](assets/userscript_1.jpg?raw=true "Before/After")
 
 ![Unity AssetStore Linkify](assets/userscript_2.jpg?raw=true "Popup dialog")
+
+### gfxpeers
+
+![Unity AssetStore Linkify](assets/userscript_3.jpg?raw=true "Popup dialog")
+
+### leakforums
+
+![Unity AssetStore Linkify](assets/userscript_4.jpg?raw=true "Popup dialog")
