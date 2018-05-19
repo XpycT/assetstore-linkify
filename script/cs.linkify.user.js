@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AssetStore Linkify
 // @namespace    https://github.com/XpycT/
-// @version      0.2.2
+// @version      0.3.0
 // @license      MIT
 // @description  AssetStore Linkify is a user script for finding links in plain-text and converting them to HTML <a> tags.
 // @homepageURL  https://github.com/XpycT/assetstore-linkify
@@ -14,6 +14,7 @@
 // @resource     fontCss https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
 // @match        *://forum.cgpersia.com/*
 // @match        *://www.cgpeers.to/*
+// @match        *://gfxpeers.net/*
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @grant        GM_addStyle
@@ -72,6 +73,21 @@
                     sURLText.substring(lastLastIndex)));
                 elmSpan.normalize();
             }
+        }
+    }
+
+    /**
+     * prepare existing links for infobox
+     */
+    function appendToLinks() {
+        let snapTextElements = document.evaluate("//a[contains(translate(., 'HTTP', 'http'), 'http') and contains(., 'assetstore.unity')]",
+            document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
+        for (let i = snapTextElements.snapshotLength - 1; i >= 0; i--) {
+            let elmLink = snapTextElements.snapshotItem(i);
+            let latest = $(elmLink).attr('href').split('/').pop().trim();
+            let data_id = Number.isInteger(latest) ? latest : latest.split('-').pop().trim();
+            $(elmLink).wrap(`<span class="unitystore-holder" data-id="${data_id}"></span>`);
+            $(elmLink).addClass('unitystore-link');
         }
     }
 
@@ -159,23 +175,18 @@
                                                 catch (e) {
                                                     console.log('content request error');
                                                 }
-
                                             }
                                         });
-
                                     }
                                     catch (e) {
                                         console.log('price request error');
                                     }
-
                                 }
                             });
-
                         }
                         catch (e) {
                             console.log('header request error');
                         }
-
                     }
                 });
             });
@@ -284,6 +295,7 @@
 
     function init() {
         addStyles();
+        appendToLinks();
         replaceTextLinks();
         addInfoLabel();
     }
